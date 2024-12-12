@@ -1,0 +1,221 @@
+
+:root {
+    --background-color: #121212;
+    --primary-color: #ffffff;
+    --secondary-color: #b3b3b3;
+    --accent-color: #1db954;
+    --border-color: #282828;
+    --font-family: 'Arial', sans-serif;
+    --max-width-mobile: 500px;
+    --max-width-desktop: 800px;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  header .logo {
+    width: 100px;
+    height: 35px;
+    background-color: var(--secondary-color);
+  }
+  .logo > img{
+    height: 35px;
+    width: 100px;
+  }
+  #buscar{
+    display: none;
+  }
+  nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  
+  .nav-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+  
+  .nav-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+  
+  header .search-bar {
+    display: flex;
+    align-items: center;
+    width: 60%;
+  }
+  
+  header .search-bar input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--border-color);
+    color: var(--primary-color);
+  }
+  
+  header .search-bar button {
+    padding: 8px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  
+  main {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden; 
+    justify-content: space-between; 
+  }
+  
+  .library, .recommendations {
+    display: flex;
+    flex-direction: column; 
+    overflow-y: auto; 
+    padding: 10px;
+  }
+  
+  .library {
+    flex: 0 0 30%; 
+    border-right: 1px solid var(--border-color);
+  }
+  
+  .recommendations {
+    flex: 1; 
+  }
+  
+  .playlist-list, .song-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .playlist-item, .song-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--border-color);
+    border-radius: 8px;
+  }
+  
+  .cover {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  .cover > img{
+    height: 60px;
+    width: 60px;    
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
+  .artist, .description {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-color);
+  }
+  
+  footer .current-song {
+    display: flex;
+    align-items: center;
+  }
+  
+  footer .current-song .cover {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  footer .controls button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      max-width: var(--max-width-mobile);
+    }
+  
+    main {
+      flex-direction: column; 
+    }
+  
+    .library, .recommendations {
+      width: 100%; 
+      border-right: none; 
+  }
+  
+  header .search-bar input{
+    display: none;
+ }
+ #buscar{
+    display: inline;
+ }
+ header .search-bar button {
+    display: none;
+  }
+  
+  
+  }
